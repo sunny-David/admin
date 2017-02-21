@@ -1,0 +1,20 @@
+{
+  "rows":[
+    {"id":"001","superior":"0001","name":"张三","tel":"13666666666","yesterday":"0","month":"0","cumulative":"0","date":"2017-01-01","money":"1.11","state":"可用"},
+    {"id":"002","superior":"0002","name":"李四","tel":"13666666666","yesterday":"0","month":"0","cumulative":"0","date":"2017-02-02","money":"2.22","state":"禁用"},
+    {"id":"003","superior":"0003","name":"王五","tel":"13666666666","yesterday":"0","month":"0","cumulative":"0","date":"2017-03-03","money":"3.33","state":"可用"},
+    {"id":"004","superior":"0004","name":"赵六","tel":"13666666666","yesterday":"0","month":"0","cumulative":"0","date":"2017-04-04","money":"4.44","state":"可用"},
+    {"id":"005","superior":"0005","name":"小米","tel":"13666666666","yesterday":"0","month":"0","cumulative":"0","date":"2017-05-05","money":"5.55","state":"可用"},
+    {"id":"006","superior":"0006","name":"小明","tel":"13666666666","yesterday":"0","month":"0","cumulative":"0","date":"2017-06-06","money":"6.66","state":"禁用"},
+    {"id":"007","superior":"0007","name":"小马","tel":"13666666666","yesterday":"0","month":"0","cumulative":"0","date":"2017-07-07","money":"7.77","state":"禁用"},
+    {"id":"008","superior":"0008","name":"小芳","tel":"13666666666","yesterday":"0","month":"0","cumulative":"0","date":"2017-08-08","money":"8.88","state":"禁用"},
+    {"id":"009","superior":"0009","name":"小安","tel":"13666666666","yesterday":"0","month":"0","cumulative":"0","date":"2017-09-09","money":"9.99","state":"可用"},
+    {"id":"010","superior":"0010","name":"小兵","tel":"13666666666","yesterday":"0","month":"0","cumulative":"0","date":"2017-10-10","money":"10.10","state":"可用"},
+    {"id":"011","superior":"0011","name":"小炮","tel":"13666666666","yesterday":"0","month":"0","cumulative":"0","date":"2017-11-11","money":"11.11","state":"可用"},
+    {"id":"012","superior":"0012","name":"小康","tel":"13666666666","yesterday":"0","month":"0","cumulative":"0","date":"2017-12-12","money":"12.12","state":"禁用"},
+    {"id":"013","superior":"0013","name":"小刘","tel":"13666666666","yesterday":"0","month":"0","cumulative":"0","date":"2017-13-13","money":"13.13","state":"可用"},
+    {"id":"014","superior":"0014","name":"小红","tel":"13666666666","yesterday":"0","month":"0","cumulative":"0","date":"2017-14-14","money":"14.14","state":"可用"},
+    {"id":"015","superior":"0015","name":"小哥","tel":"13666666666","yesterday":"0","month":"0","cumulative":"0","date":"2017-15-15","money":"15.15","state":"禁用"}
+  ],
+  "total":15
+}

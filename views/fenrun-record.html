@@ -1,0 +1,74 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="../css/style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../css/date.css" type="text/css">
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../js/date.js"></script>
+</head>
+<body>
+<div class="main-content">
+    <div class="form-header clear">
+        <h2>合伙人分润查询</h2>
+    </div>
+    <form id="searchForm" class="form-horizontal">
+        <div class="row clear">
+            <div class="control-group span8">
+                <label class="control-label">分润日期：</label>
+                <div class="controls">
+                    <input type="text" class="datainp calendar inpstart width80" name="creationDate" placeholder="开始日期">
+                    <span> - </span>
+                    <input type="text"  class="datainp calendar endDate width80" name="endDate" placeholder="结束日期" >
+                </div>
+            </div>
+        </div>
+        <div class="row clear">
+            <div class="control-group span8">
+                <label class="control-label">查看合计：</label>
+                <div class="controls" >
+                    <strong></strong>
+                </div>
+            </div>
+        </div>
+        <div class="row clear">
+            <div class="input-center">
+                <input  type="button" id="btnSearch" class="button" value="查询"/>
+                <input type="reset" id="btnReset"  class="button_red" value="重置" />
+            </div>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
+<script type="text/javascript">
+
+
+    var start = {
+        dateCell: '.inpstart',
+        format: 'YYYY-MM-DD',
+        minDate: '2014-06-16 23:59:59', //设定最小日期为当前日期
+        festival:true,
+        maxDate: '2099-06-16 23:59:59', //最大日期
+        isTime: true,
+        choosefun: function(datas){
+            end.minDate = datas; //开始日选好后，重置结束日的最小日期
+        }
+    };
+    var end = {
+        dateCell: '.inpend',
+        format: 'YYYY-MM-DD',
+        minDate: jeDate.now(0), //设定最小日期为当前日期
+        festival:true,
+        maxDate: '2099-06-16 23:59:59', //最大日期
+        isTime: true,
+        choosefun: function(datas){
+            start.maxDate = datas; //将结束日的初始值设定为开始日的最大日期
+        },
+        okfun:function(val){alert(val)}
+    };
+    jeDate(start);
+    jeDate(end);
+
+</script>

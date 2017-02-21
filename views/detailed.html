@@ -1,0 +1,106 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="../css/style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../css/date.css" type="text/css">
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../js/date.js"></script>
+</head>
+<body>
+<div class="main-content">
+    <div class="form-header clear">
+        <h2>账户收支查询</h2>
+    </div>
+    <form id="searchForm" class="form-horizontal">
+        <div class="row clear">
+            <div class="control-group span8">
+                <label class="control-label">交易流水：</label>
+                <div class="controls">
+                    <input type="text" class="control-text" name="id">
+                </div>
+            </div>
+            <div class="control-group span8">
+                <label class="control-label">业务类型：</label>
+                <div class="controls" >
+                    <select name="status">
+                        <option value=""></option>
+                        <option value="">提现手续费</option>
+                        <option value="">交易分润</option>
+                        <option value="">结算手续费</option>
+                        <option value="">人工提现</option>
+                        <option value="">调帐</option>
+                    </select>
+                </div>
+            </div>
+            <div class="control-group span8">
+                <label class="control-label">资金流向：</label>
+                <div class="controls" >
+                    <select name="status">
+                        <option value=""></option>
+                        <option value="">增加</option>
+                        <option value="">减少</option>
+                    </select>
+                </div>
+            </div>
+
+        </div>
+        <div class="row clear">
+            <div class="control-group span8">
+                <label class="control-label">交易日期：</label>
+                <div class="controls">
+                    <input type="text" class="datainp calendar width80 inpstart" name="creationDate" placeholder="开始日期">
+                    <span> - </span>
+                    <input type="text"  class="datainp calendar width80 endDate" name="endDate" placeholder="结束日期" >
+                </div>
+            </div>
+            <div class="control-group span8">
+                <label class="control-label">交易金额：</label>
+                <div class="controls">
+                    <input type="text" class="width80" name="money">
+                    <span> - </span>
+                    <input type="text" class="width80" name="money">
+                </div>
+            </div>
+        </div>
+        <div class="row clear">
+            <div class="input-center">
+                <input  type="button" id="btnSearch" class="button" value="查询"/>
+                <input type="reset" id="btnReset"  class="button_red" value="重置" />
+            </div>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
+<script type="text/javascript">
+
+
+    var start = {
+        dateCell: '.inpstart',
+        format: 'YYYY-MM-DD',
+        minDate: '2014-06-16 23:59:59', //设定最小日期为当前日期
+        festival:true,
+        maxDate: '2099-06-16 23:59:59', //最大日期
+        isTime: true,
+        choosefun: function(datas){
+            end.minDate = datas; //开始日选好后，重置结束日的最小日期
+        }
+    };
+    var end = {
+        dateCell: '.inpend',
+        format: 'YYYY-MM-DD',
+        minDate: jeDate.now(0), //设定最小日期为当前日期
+        festival:true,
+        maxDate: '2099-06-16 23:59:59', //最大日期
+        isTime: true,
+        choosefun: function(datas){
+            start.maxDate = datas; //将结束日的初始值设定为开始日的最大日期
+        },
+        okfun:function(val){alert(val)}
+    };
+    jeDate(start);
+    jeDate(end);
+
+</script>

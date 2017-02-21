@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="../css/style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../js/jquery-3.1.0.js"></script>
+
+</head>
+<body>
+<div class="main-content">
+    <div id="difference">
+        <div class="form-header clear">
+            <h2>我的账户</h2>
+        </div>
+        <div class="difference clear">
+            <a href="#" class="clear">
+            <span class="difference-img">
+                <img src="../images/difference.png">
+                <em>账户余额</em>
+            </span>
+                <strong class="count">0</strong>
+            </a>
+        </div>
+        <br>
+        <br>
+        <input type="button" value="我要提现" class="extract">
+    </div>
+    <div id="withdraw-deposit" class="hide">
+        <div class="form-header clear">
+            <h2>新增合伙人</h2>
+        </div>
+        <form class="withdraw-deposit form-horizontal">
+            <div class="row clear">
+                <div class="control-group span8">
+                    <label class="control-label">账户余额：</label>
+                    <div class="controls">
+                        <strong>0</strong>
+                    </div>
+                </div>
+                <div class="control-group span8">
+                    <label class="control-label">账户状态：</label>
+                    <div class="controls">
+                        <em>正常</em>
+                    </div>
+                </div>
+                <div class="control-group span8">
+                    <label class="control-label">提现金额：</label>
+                    <div class="controls" >
+                        <input type="text" class="control-text" name="idCard" check="required idcard">元
+                    </div>
+                </div>
+            </div>
+            <div class="row clear">
+                <div class="input-center">
+                    <input  type="button" id="btnSearch" class="button" value="提交"/>
+                    <input type="reset" id="btnReset"  class="button_red" value="重置" />
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+</body>
+</html>
+<script>
+    var on_off=true;
+    $(".extract").click(function(){
+        if(on_off){
+            $("#withdraw-deposit").removeClass("hide").addClass("show");
+            $("#difference").removeClass("show").addClass("hide");
+            on_off=false;
+        }else{
+            $("#withdraw-deposit").removeClass("show").addClass("hide");
+            $("#difference").removeClass("hide").addClass("show");
+            on_off=true;
+
+        };
+    });
+</script>

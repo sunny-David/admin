@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="../css/style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../css/date.css" type="text/css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/pagination.css">
+    <script src="../js/jquery-3.1.0.js"></script>
+    <script src="../js/date.js"></script>
+    <script src="../js/jquery.pagination.js"></script>
+</head>
+<body>
+<div class="main-content" id="partner-profit-query">
+    <div class="form-header clear">
+        <h2>合伙人分润查询</h2>
+    </div>
+    <form id="searchForm" class="form-horizontal">
+        <div class="row clear">
+            <div class="control-group span8">
+                <label class="control-label">合伙人编号：</label>
+                <div class="controls">
+                    <input type="text" class="control-text" name="id">
+                </div>
+            </div>
+            <div class="control-group span8">
+                <label class="control-label">合伙人名称：</label>
+                <div class="controls">
+                    <input type="text" class="control-text" name="tel">
+                </div>
+            </div>
+            <div class="control-group span9">
+                <label class="control-label">分润日期：</label>
+                <div class="controls">
+                    <input type="text" class="datainp calendar width80" id="inpstart" name="creationDate" placeholder="开始日期">
+                    <span> - </span>
+                    <input type="text"  class="datainp calendar width80" id="inpend" name="endDate" placeholder="结束日期" >
+                </div>
+            </div>
+        </div>
+        <div class="row clear">
+            <div class="control-group span9">
+                <label class="control-label">查看合计：</label>
+                <div class="controls" >
+
+                </div>
+            </div>
+        </div>
+        <div class="row clear">
+            <div class="input-center">
+                <input  type="button" id="btnSearch" class="button" value="搜索"/>
+                <input type="reset" id="btnReset"  class="button_red" value="重置" />
+            </div>
+        </div>
+    </form>
+    <div class="form-header clear">
+        <h2>合伙人信息</h2>
+    </div>
+    <div class="info">
+        <table>
+            <thead>
+            <tr>
+                <th>合伙人编号</th>
+                <th>合伙人姓名</th>
+                <th>分润日期</th>
+                <th>分润</th>
+            </tr>
+            </thead>
+            <tbody id="Searchresult" style="text-align: center">
+
+            </tbody>
+        </table>
+    </div>
+    <div id="Pagination" class="pagination" style="float: right"><!-- 这里显示分页 --></div>
+
+</div>
+<!--
+<input class="datainp" id="inpstart" type="text" placeholder="开始日期"  readonly>
+<input class="datainp" id="inpend" type="text" placeholder="结束日期"   readonly>
+-->
+
+</body>
+</html>
+<script type="text/javascript">
+
+
+    var start = {
+        dateCell: '#inpstart',
+        format: 'YYYY-MM-DD',
+        minDate: '2014-06-16 23:59:59', //设定最小日期为当前日期
+        festival:true,
+        maxDate: '2099-06-16 23:59:59', //最大日期
+        isTime: true,
+        choosefun: function(datas){
+            end.minDate = datas; //开始日选好后，重置结束日的最小日期
+        }
+    };
+    var end = {
+        dateCell: '#inpend',
+        format: 'YYYY-MM-DD',
+        minDate: jeDate.now(0), //设定最小日期为当前日期
+        festival:true,
+        maxDate: '2099-06-16 23:59:59', //最大日期
+        isTime: true,
+        choosefun: function(datas){
+            start.maxDate = datas; //将结束日的初始值设定为开始日的最大日期
+        },
+        okfun:function(val){alert(val)}
+    };
+    jeDate(start);
+    jeDate(end);
+
+    /*表单数据*/
+    var showCount = 5;
+    var initPagination = function() {
+        // 创建分页
+        $("#Pagination").pagination(15, {
+            num_edge_entries: 1, //边缘页数
+            num_display_entries: 6, //主体页数
+            'prev_text': "上一页",
+            'next_text': "下一页",
+            callback: pageselectCallback,
+            items_per_page:showCount //每页显示1项
+        });
+    }();
+    function pageselectCallback(page_index, jq){
+        InitData(page_index);
+        return false;
+    };
+    function InitData(page_index){
+        var num_entries=0;
+        $.ajax({
+            type: "POST",
+            url: "../data/info.json",
+            dataType: 'json',
+            success:function(data){
+                var dataInfo=data.rows;
+                num_entries=data.total;
+                var max_elem = Math.min((page_index+1) *showCount, num_entries);
+                $("#Searchresult").html("");
+                for(var i=page_index*showCount;i<max_elem;i++){
+                    var new_content ="<tr>" +
+                            "<td>"+dataInfo[i].id+"</td>"+
+                            "<td>"+dataInfo[i].name+"</td>"+
+                            "<td>"+dataInfo[i].date+"</td>"+
+                            "<td>"+dataInfo[i].money+"</td>"+
+
+                            "</tr>";
+                    $("#Searchresult").append(new_content); //装载对应分页的内容
+                };
+            }
+        });
+    };
+
+
+</script>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="../css/style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../css/date.css" type="text/css">
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../js/date.js"></script>
+</head>
+<body>
+<div class="main-content">
+    <div class="form-header clear">
+        <h2>销售单查询</h2>
+    </div>
+    <form id="searchForm" class="form-horizontal">
+        <div class="row clear">
+            <div class="control-group span8">
+                <label class="control-label">收款码：</label>
+                <div class="controls">
+                    <input type="text" class="control-text" name="id">
+                </div>
+            </div>
+            <div class="control-group span8">
+                <label class="control-label">状态：</label>
+                <div class="controls" >
+                    <select name="status">
+                        <option value=""></option>
+                        <option value="">初始</option>
+                        <option value="">交易</option>
+                        <option value="">不可用</option>
+                        <option value="">代理人所有</option>
+                        <option value="">合伙人所有</option>
+                        <option value="">激活</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row clear">
+            <div class="control-group span8">
+                <label class="control-label">所属商户编号：</label>
+                <div class="controls">
+                    <input type="text" class="control-text" name="merchant_code">
+                </div>
+            </div>
+            <div class="control-group span8">
+                <label class="control-label">所属合伙人：</label>
+                <div class="controls">
+                    <input type="text" class="control-text" name="merchant_code">
+                </div>
+            </div>
+        </div>
+        <div class="row clear">
+            <div class="input-center">
+                <input  type="button" id="btnSearch" class="button" value="查询"/>
+                <input type="reset" id="btnReset"  class="button_red" value="重置" />
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>

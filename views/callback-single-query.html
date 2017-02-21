@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="../css/style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../css/date.css" type="text/css">
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../js/date.js"></script>
+</head>
+<body>
+<!--
+<marquee bgcolor="#ccffff" vspace="10" direction="up" height="104" width="22.35%" loop="3" scrollamount="1" scrolldelay="10" hspace="20">
+    <p align="center">
+        <font color="#000000">此处输入滚动内容</font>
+    </p>
+</marquee>
+<marquee>这里是输入文字的地方，还可以放图片代码、Flash动画代码和gif动态小图代码。</marquee>
+<marquee id="affiche" align="left" behavior="scroll" bgcolor="#eee" direction="up" height="300" width="300" hspace="50" vspace="20" loop="-1" scrollamount="10" scrolldelay="100" onMouseOut="this.start()" onMouseOver="this.stop()">
+    这是一个完整的例子
+</marquee>
+<p>Version 2.0 is <del>not yet available!</del> now available!</p>
+<pre>
+    Stock ID    Description             Price         Quantity in Stock
+    &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;    -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;             -&#45;&#45;&#45;&#45;         -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;
+    116         Inflatable Armchair     21.50                13
+    119         Walkie Talkie           40.20                44
+</pre>
+-->
+<div class="main-content">
+    <div class="form-header clear">
+        <h2>回拨单查询</h2>
+    </div>
+    <form id="searchForm" class="form-horizontal">
+        <div class="row clear">
+            <div class="control-group span8">
+                <label class="control-label">回拨单查询：</label>
+                <div class="controls">
+                    <input type="text" class="control-text" name="id">
+                </div>
+            </div>
+            <div class="control-group span8">
+                <label class="control-label">接收者编号：</label>
+                <div class="controls">
+                    <input type="text" class="control-text" name="merchant_code">
+                </div>
+            </div>
+            <div class="control-group span8">
+                <label class="control-label">回拨单类型：</label>
+                <div class="controls">
+                    <input type="text" class="control-text" name="merchant_code">
+                </div>
+            </div>
+        </div>
+        <div class="row clear">
+            <div class="control-group span9">
+                <label class="control-label">回拨时间：</label>
+                <div class="controls">
+                    <input type="text" class="datainp calendar inpstart width80" name="creationDate" placeholder="开始日期">
+                    <span> - </span>
+                    <input type="text"  class="datainp calendar endDate width80" name="endDate" placeholder="结束日期" >
+                </div>
+            </div>
+        </div>
+        <div class="row clear">
+            <div class="input-center">
+                <input  type="button" id="btnSearch" class="button" value="查询"/>
+                <input type="reset" id="btnReset"  class="button_red" value="重置" />
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>
+<script type="text/javascript">
+
+
+    var start = {
+        dateCell: '.inpstart',
+        format: 'YYYY-MM-DD',
+        minDate: '2014-06-16 23:59:59', //设定最小日期为当前日期
+        festival:true,
+        maxDate: '2099-06-16 23:59:59', //最大日期
+        isTime: true,
+        choosefun: function(datas){
+            end.minDate = datas; //开始日选好后，重置结束日的最小日期
+        }
+    };
+    var end = {
+        dateCell: '.inpend',
+        format: 'YYYY-MM-DD',
+        minDate: jeDate.now(0), //设定最小日期为当前日期
+        festival:true,
+        maxDate: '2099-06-16 23:59:59', //最大日期
+        isTime: true,
+        choosefun: function(datas){
+            start.maxDate = datas; //将结束日的初始值设定为开始日的最大日期
+        },
+        okfun:function(val){alert(val)}
+    };
+    jeDate(start);
+    jeDate(end);
+
+</script>

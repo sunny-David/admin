@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>particles.js</title>
+    <meta name="description" content="particles.js is a lightweight JavaScript library for creating particles.">
+    <meta name="author" content="Vincent Garreau" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" media="screen" href="css/style.css">
+    <script src="../js/jquery-3.1.0.js"></script>
+</head>
+<body>
+
+<!-- count particles -->
+
+<!-- particles.js container -->
+<div id="particles-js"></div>
+
+<!-- scripts -->
+<script src="js/particles.js"></script>
+<script src="js/app.js"></script>
+<script src="js/verificationNumbers.js"></script>
+<dl class="admin_login">
+    <dt>
+        <strong>聚宝盒后台管理系统</strong>
+        <em>Management System</em>
+    </dt>
+    <dd class="user_icon">
+        <input type="text" placeholder="账号" class="login_txtbx"/>
+    </dd>
+    <dd class="pwd_icon">
+        <input type="password" placeholder="密码" class="login_txtbx"/>
+    </dd>
+    <dd class="val_icon">
+        <div class="checkcode">
+            <input type="text" id="J_codetext" placeholder="验证码" maxlength="4" class="login_txtbx">
+            <canvas class="J_codeimg" id="myCanvas" onclick="createCode()">对不起，您的浏览器不支持canvas，请下载最新版浏览器!</canvas>
+        </div>
+        <input type="button" value="验证码核验" class="ver_btn" onClick="validate();">
+    </dd>
+    <dd>
+        <input type="button" value="立即登陆" class="submit_btn"/>
+    </dd>
+    <dd>
+        <p>© 2015 Hubei Chancoo 版权所有</p>
+        <p>鄂ICP备11004042号-49 营业执照</p>
+    </dd>
+</dl>
+
+</body>
+</html>
+<script>
+        //验证码
+        createCode();
+        //测试提交，对接程序删除即可
+        $(".submit_btn").click(function(){
+            location.href="../index.html"/*tpa=http://***index.html*/;
+        });
+</script>

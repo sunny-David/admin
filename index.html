@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>聚宝盒-admin</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="css/font-awesome.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery-3.1.0.js"></script>
+    <script src="js/style.js"></script>
+</head>
+<body>
+<div class="header clear">
+    <div class="logo">
+        <a href="#">上谷网络-聚宝盒后台</a>
+    </div>
+    <div class="welcome">
+        欢迎您，
+        <span class="user">123@163.com</span>
+        <a href="#" class="quit">[退出]</a>
+    </div>
+</div>
+<div class="content">
+    <div class="main-nav">
+        <ul class="z-nav clear">
+            <li class="nav-item ckecked">
+                <div class="nav-business nav-item-title">业务管理</div>
+                <i class="fa fa-suitcase nav-icon" aria-hidden="true"></i>
+            </li>
+            <li class="nav-item">
+                <div class="nav-business nav-item-title">财务管理</div>
+                <i class="fa fa-database nav-icon" aria-hidden="true"></i>
+            </li>
+            <li class="nav-item">
+                <div class="nav-business nav-item-title">系统管理</div>
+                <i class="fa fa-cogs nav-icon" aria-hidden="true"></i>
+            </li>
+            <li class="nav-item">
+                <div class="nav-business nav-item-title">报表管理</div>
+                <i class="fa fa-file-text nav-icon" aria-hidden="true"></i>
+            </li>
+        </ul>
+    </div>
+    <ul class="nav-content">
+        <li class="tab-item clear choose">
+            <div class="second-nav clear">
+                <div class="second-three">
+                    <ul class="side-menu">
+                        <li class="menu-item">
+                            <div class="menu-title">
+                                <i class="fa fa-angle-down"></i>
+                                <span class="title-text">合伙人管理</span>
+                            </div>
+                            <ul class="menu">
+                                <li class="item" title="partner-query.html">
+                                    <a href="#">
+                                        <em>合伙人查询</em>
+                                    </a>
+                                </li>
+                                <li class="item" title="partner-profit-query.html">
+                                    <a href="#">
+                                        <em>合伙人分润查询</em>
+                                    </a>
+                                </li>
+                                <li class="item" title="new-partner.html">
+                                    <a href="#">
+                                        <em>新增合伙人</em>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu-item">
+                            <div class="menu-title">
+                                <i class="fa fa-angle-down"></i>
+                                <span class="title-text">订单管理</span>
+                            </div>
+                            <ul class="menu">
+                                <li class="item" title="weChat.html">
+                                    <a href="#">
+                                        <em>微信订单查询</em>
+                                    </a>
+                                </li>
+                                <li class="item" title="alipay.html">
+                                    <a href="#">
+                                        <em>支付宝订单查询</em>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu-item">
+                            <div class="menu-title">
+                                <i class="fa fa-angle-down"></i>
+                                <span class="title-text">收款码管理</span>
+                            </div>
+                            <ul class="menu">
+                                <li class="item" title="collection-code-callback.html">
+                                    <a href="#">
+                                        <em>收款码回拨</em>
+                                    </a>
+                                </li>
+                                <li class="item" title="callback-single-query.html">
+                                    <a href="#">
+                                        <em>回拨单查询</em>
+                                    </a>
+                                </li>
+                                <li class="item" title="distribution-list-query.html">
+                                    <a href="#">
+                                        <em>分配单查询</em>
+                                    </a>
+                                </li>
+                                <li class="item" title="collection-code-query.html">
+                                    <a href="#">
+                                        <em>收款码查询</em>
+                                    </a>
+                                </li>
+                                <li class="item" title="collection-code-separation.html">
+                                    <a href="#">
+                                        <em>收款码分离</em>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu-item">
+                            <div class="menu-title">
+                                <i class="fa fa-angle-down"></i>
+                                <span class="title-text">商户管理</span>
+                            </div>
+                            <ul class="menu">
+                                <li class="item" title="merchant-inquiry.html">
+                                    <a href="#">
+                                        <em>商户查询</em>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="second-slib">
+                    <div class="second-slib-icon"></div>
+                </div>
+            </div>
+            <!--右边content-->
+            <div class="tab-inner">
+                <div class="nav-tab">
+                    <div class="tab-nav-bar">
+                        <i class="tab-nav-arrow arrow-left"></i>
+                        <div class="tab-nav-wrap">
+                            <div class="tab-nav-inner">
+                                <ul class="tab-nav-list clear">
+                                    <li class="tab-nav-item tab-nav tab-nav-active">
+                                        <div class="left"></div>
+                                        <div class="tab-nav-item-inner">
+                                            <span class="tab-nav-title">主页</span>
+                                            <div class="tab-item-close hide"></div>
+                                        </div>
+                                        <div class="right"></div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <i class="tab-nav-arrow arrow-right"></i>
+                    </div>
+                    <div class="tab-content-wrap">
+                        <div class="tab-content">
+                            <iframe frameborder="0" width="100%" height="100%" src="views/home.html"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="tab-item clear hide">
+            <div class="second-nav clear">
+                <div class="second-three">
+                    <ul class="side-menu">
+                        <li class="menu-item">
+                            <div class="menu-title">
+                                <i class="fa fa-angle-down"></i>
+                                <span class="title-text">财务管理</span>
+                            </div>
+                            <ul class="menu">
+                                <li class="item" title="my-account.html">
+                                    <a href="#">
+                                        <em>我的账户</em>
+                                    </a>
+                                </li>
+                                <li class="item" title="detailed.html">
+                                    <a href="#">
+                                        <em>账户收支明细</em>
+                                    </a>
+                                </li>
+                                <li class="item" title="settlement.html">
+                                    <a href="#">
+                                        <em>我的结算卡</em>
+                                    </a>
+                                </li>
+                                <li class="item" title="query-order.html">
+                                    <a href="#">
+                                        <em>提现订单查询</em>
+                                    </a>
+                                </li>
+                                <li class="item" title="fenrun-record.html">
+                                    <a href="#">
+                                        <em>我的分润记录</em>
+                                    </a>
+                                </li>
+                                <li class="item" title="account-management.html">
+                                    <a href="#">
+                                        <em>账户管理</em>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="second-slib">
+                    <div class="second-slib-icon"></div>
+                </div>
+            </div>
+            <div class="tab-inner">
+                <div class="nav-tab">
+                    <div class="tab-nav-bar">
+                        <i class="tab-nav-arrow arrow-left"></i>
+                        <div class="tab-nav-wrap">
+                            <div class="tab-nav-inner">
+                                <ul class="tab-nav-list clear">
+                                    <li class="tab-nav-item tab-nav-active">
+                                        <div class="left"></div>
+                                        <div class="tab-nav-item-inner">
+                                            <span class="tab-nav-title">主页</span>
+                                            <div class="tab-item-close hide"></div>
+                                        </div>
+                                        <div class="right"></div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <i class="tab-nav-arrow arrow-right"></i>
+                    </div>
+                    <div class="tab-content-wrap">
+                        <div class="tab-content">
+                            <iframe frameborder="0" width="100%" height="100%" src="views/home.html"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="tab-item clear hide">
+            <div class="second-nav clear">
+                <div class="second-three">
+                    <ul class="side-menu">
+                        <li class="menu-item">
+                            <div class="menu-title">
+                                <i class="fa fa-angle-down"></i>
+                                <span class="title-text">系统管理</span>
+                            </div>
+                            <ul class="menu">
+                                <li class="item" title="my-info.html">
+                                    <a href="#">
+                                        <em>我的信息</em>
+                                    </a>
+                                </li>
+                                <li class="item" title="logging.html">
+                                    <a href="#">
+                                        <em>登录日志</em>
+                                    </a>
+                                </li>
+                                <li class="item" title="change-password.html">
+                                    <a href="#">
+                                        <em>修改密码</em>
+                                    </a>
+                                </li>
+                                <li class="item" title="operator.html">
+                                    <a href="#">
+                                        <em>操作员管理</em>
+                                    </a>
+                                </li>
+                                <li class="item" title="new-manager.html">
+                                    <a href="#">
+                                        <em>新增操作员</em>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="second-slib">
+                    <div class="second-slib-icon"></div>
+                </div>
+            </div>
+            <div class="tab-inner">
+                <div class="nav-tab">
+                    <div class="tab-nav-bar">
+                        <i class="tab-nav-arrow arrow-left"></i>
+                        <div class="tab-nav-wrap">
+                            <div class="tab-nav-inner">
+                                <ul class="tab-nav-list clear">
+                                    <li class="tab-nav-item tab-nav-active">
+                                        <div class="left"></div>
+                                        <div class="tab-nav-item-inner">
+                                            <span class="tab-nav-title">主页</span>
+                                            <div class="tab-item-close"></div>
+                                        </div>
+                                        <div class="right"></div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <i class="tab-nav-arrow arrow-right"></i>
+                    </div>
+                    <div class="tab-content-wrap">
+                        <div class="tab-content">
+                            <iframe frameborder="0" width="100%" height="100%" src="views/home.html"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="tab-item clear hide">
+            <div class="second-nav clear">
+                <div class="second-three">
+                    <ul class="side-menu">
+                        <li class="menu-item">
+                            <div class="menu-title">
+                                <i class="fa fa-angle-down"></i>
+                                <span class="title-text">分润报表</span>
+                            </div>
+                            <ul class="menu">
+                                <li class="item" title="fenrun-statements.html">
+                                    <a href="#">
+                                        <em>合伙人分润报表</em>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="second-slib">
+                    <div class="second-slib-icon"></div>
+                </div>
+            </div>
+            <div class="tab-inner">
+                <div class="nav-tab">
+                    <div class="tab-nav-bar">
+                        <i class="tab-nav-arrow arrow-left"></i>
+                        <div class="tab-nav-wrap">
+                            <div class="tab-nav-inner">
+                                <ul class="tab-nav-list clear">
+                                    <li class="tab-nav-item tab-nav-active">
+                                        <div class="left"></div>
+                                        <div class="tab-nav-item-inner">
+                                            <span class="tab-nav-title">主页</span>
+                                            <div class="tab-item-close"></div>
+                                        </div>
+                                        <div class="right"></div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <i class="tab-nav-arrow arrow-right"></i>
+                    </div>
+                    <div class="tab-content-wrap">
+                        <div class="tab-content">
+                            <iframe frameborder="0" width="100%" height="100%" src="views/home.html"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+</body>
+</html>
